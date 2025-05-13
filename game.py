@@ -5,15 +5,15 @@ class card:
         self.path = "card_files/" + path + ".txt"
         with open(self.path, encoding="utf-8") as f:
             self.graphics = [line[:-1] for line in f]
-            self.num_mods = len(self.graphics) / 8
+            self.num_mods = len(self.graphics) / 7
             if mod is None:
                 self.mod = random.randint(0, self.num_mods-1)
             else:
                 self.mod = mod
-            self.idx = self.mod * 8
+            self.idx = self.mod * 7
             
     def show(self):
-        for line in self.graphics[self.idx:self.idx+8]: print(line)
+        for line in self.graphics[self.idx:self.idx+7]: print(line)
 
 class deck:
     def __init__(self, decklist, shuffle=True, boss=None):
