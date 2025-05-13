@@ -7,7 +7,7 @@ from game import *
 def main() -> None:
     """Entry point function."""
     decklist_1 = 2*["amoba_nagy"] + 5*["amoba_orias"] + 4*["kardfogu_szunyog"] + 1*["kobold_felderito"]
-    decklist_2 = 3*["kobold_bandita"] + 4*["kobold_vadasz"] + 1*["kobold_felderito"] + 2*["eltorlaszolt_jarat"]
+    #decklist_2 = 3*["kobold_bandita"] + 4*["kobold_vadasz"] + 1*["kobold_felderito"] + 2*["eltorlaszolt_jarat"]
     dungeon_1 = deck(decklist_1, boss="eltorlaszolt_jarat")
     test = game(dungeon_1, deck(3*["kobold_bandita"] + 4*["kobold_vadasz"]), deck([]))
 

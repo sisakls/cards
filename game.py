@@ -15,6 +15,7 @@ class card:
     def show(self):
         for line in self.graphics[self.idx:self.idx+7]: print(line)
 
+
 class deck:
     def __init__(self, decklist, shuffle=True, boss=None):
         self.cards = [card(monster) for monster in decklist]
@@ -22,6 +23,11 @@ class deck:
             random.shuffle(self.cards)
         if boss is not None:
             self.cards.append(card(boss))
+
+    def add(self, target, shuffle=False):
+        self.cards = self.cards + target.cards
+        if shuffle: 
+            random.shuffle(self.cards)
 
     def move(self, target, num=1, idx=0):
         tmp = self.cards[idx:idx+num]
@@ -34,6 +40,7 @@ class deck:
     def show(self):
         for card in self.cards: card.show()
         if self.size()==0: print("Ez a pakli üres!")
+
 
 class game:
     def __init__(self, dungeon, loot, town):
