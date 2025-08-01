@@ -4,6 +4,7 @@ class card:
     def __init__(self, path, mod=None):
         self.path = "card_files/" + path + ".txt"
         self.type = path.split('/')[0]
+        self.subtype = None
         if self.type == "item":
             self.subtype == path.split('/')[1]
         with open(self.path, encoding="utf-8") as f:
@@ -102,8 +103,8 @@ class game:
         self.town.move(self.hand, num_draw)
         print("Az alábbi lapokat húztad:")
         self.hand.show()
-        self.move_sequence(self.hand, self.dngn_bin, "Melyik felszerelést vetted meg?")
-        self.hand.move(self.dngn, self.hand.size())
+        self.move_sequence(self.hand, self.player_invs[self.p], "Melyik felszerelést vetted meg?")
+        self.hand.move(self.town, self.hand.size())
 
     def move_sequence(self, source, target, prompt):
         while True:
