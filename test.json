@@ -1,0 +1,10 @@
+{"dngn_list_1": {
+    "monster/amoba_nagy": 2, "monster/amoba_orias": 5, "monster/kardfogu_szunyog":4, "monster/kobold_felderito":1},
+"dngn_list_2": {
+    "monster/kobold_bandita": 3, "monster/kobold_vadasz": 4, "monster/kobold_felderito": 1, "monster/eltorlaszolt_jarat": 1},
+"loot_list": {
+    "powerup/cha_up": 2, "powerup/mag_up": 2, "powerup/sth_up": 2, "powerup/vit_up": 4},
+"town_list": {
+    "item/armor/bearskin": 1, "item/armor/chain_mail": 1, "item/armor/leather_armor": 1, "item/armor/thief_cloak": 1, "item/armor/wizard_cloak":1,
+    "item/consumable/health_potion": 4, "item/consumable/scroll_of_fire": 2, "item/consumable/throwing_knife": 2,
+    "item/weapon/baszottnehez_ko": 1, "item/weapon/foldrengeto": 1, "item/weapon/ij": 1, "item/weapon/parittya": 1, "item/weapon/vadaszkes": 1}}
