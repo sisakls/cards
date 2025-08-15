@@ -1,26 +1,31 @@
 #!/usr/bin/env python3
 
 from game import *
+import json
+
+class DataLoader:
+    def __init__(self, json_file):
+        with open(json_file, 'r') as f:
+            self.rawdata = json.load(f)
+        self.dungeon = self.build_deck("dngn_list_1")
+        self.dungeon.add(self.build_deck("dngn_list_2"))
+        self.loot = self.build_deck("loot_list")
+        self.town = self.build_deck("town_list")
+
+    def build_deck(self, deck_name):
+        decklist = []
+        for card_name, count in self.rawdata[deck_name].items():
+            decklist = decklist + count*[card_name]
+        return deck(decklist)
 
 
 def main() -> None:
-    """Entry point function.""" #TODO: move this mess to a config file, fix naming
-    dngnlist_1 = 2*["monster/amoba_nagy"] + 5*["monster/amoba_orias"] + 4*["monster/kardfogu_szunyog"] + 1*["monster/kobold_felderito"]
-    dngnlist_2 = 3*["monster/kobold_bandita"] + 4*["monster/kobold_vadasz"] + 1*["monster/kobold_felderito"] + 2*["monster/eltorlaszolt_jarat"]
-    dungeon = deck(dngnlist_1)
-    dungeon.add(deck(dngnlist_2))
+    """Entry point function.""" #TODO: fix naming
+    #parse gin file
+    #gin.parse_config_files_and_bindings(FLAGS.gin_file, FLAGS.gin_param, skip_unknown=True)
 
-    lootlist = 2*["powerup/cha_up"] + 2*["powerup/mag_up"] + 2*["powerup/sth_up"] + 4*["powerup/vit_up"]
-    loot = deck(lootlist)
-
-    townlist_1 = ["item/armor/bearskin"] + ["item/armor/chain_mail"] + ["item/armor/leather_armor"] + ["item/armor/thief_cloak"] + ["item/armor/wizard_cloak"]
-    townlist_2 = 4*["item/consumable/health_potion"] + 2*["item/consumable/scroll_of_fire"] + 2*["item/consumable/throwing_knife"]
-    townlist_3 = ["item/weapon/baszottnehez_ko"] + ["item/weapon/foldrengeto"] + ["item/weapon/ij"] + ["item/weapon/parittya"] + ["item/weapon/vadaszkes"]
-    town = deck(townlist_1)
-    town.add(deck(townlist_2))
-    town.add(deck(townlist_3), shuffle=True)
-
-    test = game(dungeon, loot, town)
+    game_data = DataLoader("test.json")
+    test = game(game_data.dungeon, game_data.loot, game_data.town)
 
     test.run_setup()
     end = False
@@ -28,5 +33,5 @@ def main() -> None:
         test.run_turn()
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":    
     main()
