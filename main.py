@@ -21,8 +21,6 @@ class DataLoader:
 
 def main() -> None:
     """Entry point function.""" #TODO: fix naming
-    #parse gin file
-    #gin.parse_config_files_and_bindings(FLAGS.gin_file, FLAGS.gin_param, skip_unknown=True)
 
     game_data = DataLoader("test.json")
     test = game(game_data.dungeon, game_data.loot, game_data.town)
