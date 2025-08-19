@@ -13,6 +13,5 @@ def main() -> None:
     while end is False:
         test.run_turn()
 
-
 if __name__ == "__main__":    
     main()

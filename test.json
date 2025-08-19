@@ -3,8 +3,9 @@
 "dngn_list_2": {
     "monster/kobold_bandit": 3, "monster/kobold_hunter": 4, "monster/kobold_scout": 1, "monster/blocked_tunnel": 1},
 "loot_list": {
-    "powerup/cha_up": 2, "powerup/mag_up": 2, "powerup/sth_up": 2, "powerup/vit_up": 4},
+    "powerup/cha_up": 2, "powerup/mag_up": 2, "powerup/sth_up": 2, "powerup/acc_up.txt": 2, "powerup/vit_up": 4},
 "town_list": {
     "item/armor/bearskin": 1, "item/armor/chain_mail": 1, "item/armor/leather_armor": 1, "item/armor/thief_cloak": 1, "item/armor/wizard_cloak":1,
-    "item/consumable/health_potion": 4, "item/consumable/scroll_of_fire": 2, "item/consumable/throwing_knife": 2,
-    "item/weapon/very_heavy_stone": 1, "item/weapon/earthshaker": 1, "item/weapon/bow": 1, "item/weapon/sling": 1, "item/weapon/hunting_knife": 1}}
+    "item/consumable/health_potion": 2, "item/consumable/scroll_of_fire": 2, "item/consumable/scroll_of_lightning": 2,
+    "item/weapon/very_heavy_stone": 1, "item/weapon/earthshaker": 1, "item/weapon/bow": 1, "item/weapon/sling": 1, 
+    "item/weapon/hunting_knife": 1, "item/weapon/sorcerer_staff": 1}}
